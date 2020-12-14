@@ -23,7 +23,7 @@ G
 
 ## When TE & CL were using:
 
-In this case: The front end server will use the TE and find the `0` because this indicates the end of the chunked request, hence this means the front end server will send this whole request to the backend, now backend is not supporting the Transfer-Encoding header so it will check the Content-Length header and will find that there are only 4 Bytes of the content body which is `12\r\n` (`\r` will consider as 1 byte hence 4 bytes) and rest of it is a HTTP request as the syntax says with method `GPOST` based on the second request method, so it will send another request as `GPOST` method, which is a non standard method, resulting an error when we hit second request to the server.
+In this case: The front end server will use the TE and find the `0` because this indicates the end of the chunked request, hence this means the front end server will send this whole request to the backend, now backend is not supporting the Transfer-Encoding header so it will check the Content-Length header and will find that there are only 4 Bytes of the content body which is `12\r\n` (`\r` will consider as 1 byte hence 4 bytes) and rest of it is a HTTP request as the syntax says with method `GPOST`, so it will send another request as `GPOST` method, which is a non standard method, resulting an error when we hit second request to the server.
 
 ```
 Content-Length: 4

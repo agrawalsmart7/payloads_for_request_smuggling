@@ -9,7 +9,7 @@ Note worthy Points:
 
 ## When CL & TE were using:
 
-In this case: The front end server parses CL header, and forward the request to the backend, the backend supports the TE header, so it will ignore the CL and check the request where `0` ends the request and the rest of the data is for the second request, so when the second request goes to the server, it will respond as `GPOST` or `GET` whatever the second request will use. Because the server will wait for the rest of the query, as the second request will start from 'GET' or 'POST'
+In this case: The front end server parses CL header, and forward the request to the backend, the backend supports the TE header, so it will ignore the CL and check the request where `0` ends the request and the rest of the data is for the second request, so when the second request goes to the server, it will respond as `GPOST` or `GGET` whatever the second request will use. Because the server will wait for the rest of the query, as the second request will start from 'GET' or 'POST'
 
 ```
 Transfer-Encoding: chunked
